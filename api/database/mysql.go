@@ -3,13 +3,19 @@ import (
 	_ "github.com/go-sql-driver/mysql" //加载mysql
 	"github.com/jinzhu/gorm"
 	"fmt"
+	tool "github.com/snowspice/go-gin-gorm-router/api/config"
+
 )
 
 var Eloquent *gorm.DB
+//var conf *tool.Config
 
 func init() {
 	var err error
-	Eloquent, err = gorm.Open("mysql", "root:123456@tcp(127.0.0.1:3306)/test?charset=utf8&parseTime=True&loc=Local&timeout=10ms")
+	var  conf = tool.GetAppConf()
+	fmt.Println("my sql value is ---> ",conf.Mysql)
+
+	Eloquent, err = gorm.Open("mysql", conf.Mysql)
 
 	if err != nil {
 		fmt.Printf("mysql connect error %v", err)

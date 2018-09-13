@@ -9,6 +9,11 @@ import (
 )
 
 //列表数据
+func Index(c *gin.Context){
+	c.String(http.StatusOK,"ok")
+}
+
+
 //curl -X GET http://127.0.0.1:8000/users
 func Users(c *gin.Context) {
 	var user model.User

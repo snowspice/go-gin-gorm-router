@@ -15,4 +15,9 @@
      接口实现方法
 ## 2.6 api/common
     常用工具类，当前仅分页工具类
+## 2.7 api/config
+    采用consul作为配置服务器，初始化配置信息
+### 2.7.1 安装consul
+    https://github.com/snowspice/consul
+
 
